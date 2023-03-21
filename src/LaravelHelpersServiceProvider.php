@@ -4,6 +4,7 @@ namespace Livewirez\LaravelHelpers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 use Livewirez\LaravelHelpers\Composer\Composer;
 
 class LaravelHelpersServiceProvider extends ServiceProvider
@@ -37,7 +38,7 @@ class LaravelHelpersServiceProvider extends ServiceProvider
 
         $composer = new Composer(json_decode($composer_file_string));
 
-        log_this($composer);
+        Log::info($composer);
 
         if ($composer->composer_has_files()) {
             $composer->autoload->files[] = "app/Helpers/Helpers.php";

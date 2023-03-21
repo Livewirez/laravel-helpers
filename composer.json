@@ -1,0 +1,28 @@
+{
+    "name": "livewirez/laravel-helpers",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Livewirez\\LaravelHelpers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Steve",
+            "email": "stevemwendest@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Livewirez\\LaravelHelpers\\LaravelHelpersServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

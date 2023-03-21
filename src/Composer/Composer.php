@@ -7,17 +7,19 @@ use ArrayAccess;
 
 class Composer extends stdClass implements ArrayAccess
 {
-    private int $position = 0;
-
     public function __construct(?object $composerautoload = null) {
         foreach (get_object_vars($composerautoload) as $name => $value) {
             $this->$name = $value;
         }
     }
 
-    public function check_files_is_empty(): bool
+    public function composer_has_files(): bool
     {
-        return is_null($this->autoload?->files) || $this->autoload->files === [];
+        if (property_exists($this, 'autoload')) {
+            return ! is_null($this->autoload?->files) || $this->autoload->files !== [];
+        }
+
+        return false;
     }
 
     public function __toString()

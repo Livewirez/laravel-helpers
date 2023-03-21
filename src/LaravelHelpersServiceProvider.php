@@ -37,9 +37,7 @@ class LaravelHelpersServiceProvider extends ServiceProvider
         $composer_file_string = $disk->get('composer.json');
 
         $composer = new Composer(json_decode($composer_file_string));
-
-        Log::info($composer);
-
+        
         $path = "app/Helpers/Helpers.php";
 
         if ($composer->composer_has_files()) {

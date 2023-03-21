@@ -4,10 +4,8 @@ namespace Livewirez\LaravelHelpers;
 
 use stdClass;
 use ArrayAccess;
-use Iterator;
-use Illuminate\Contracts\Support\Arrayable;
 
-class Composer extends stdClass implements ArrayAccess, Iterator, Arrayable
+class Composer extends stdClass implements ArrayAccess
 {
     private int $position = 0;
 
@@ -47,48 +45,5 @@ class Composer extends stdClass implements ArrayAccess, Iterator, Arrayable
     public function offsetUnset(mixed $offset): void
     {
        unset($this->$offset);
-    }
-
-    public function toArray(): array
-    {
-        $reflection = new \ReflectionClass($this);
-        $vars = [];
-        foreach ($reflection->getProperties(\ReflectionProperty::IS_PUBLIC) as $property) {
-            $vars[$property->getName()] = $this->{$property->getName()};
-        }
-        return $vars;
-        // return (array) $this;
-    }
-
-    // Return the key of the current element
-    public function key(): mixed
-    {
-        $keys = array_keys($this->toArray());
-        return $keys[$this->position];
-    }
-
-    // Return the current element
-    public function current(): mixed
-    {
-        return $this->{$this->key()};
-    }
-
-    // Move forward to next element
-    public function next(): void
-    {
-        $this->position++;
-    }
-
-    // Rewind the iterator to the first element
-    public function rewind(): void
-    {
-        $this->position = 0;
-    }
-
-    // Check if current position is valid
-    public function valid():bool
-    {
-        $keys = array_keys((array) $this);
-        return isset($keys[$this->position]);
     }
 }

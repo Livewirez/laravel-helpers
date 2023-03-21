@@ -4,6 +4,7 @@ namespace Livewirez\LaravelHelpers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Storage;
+use Livewirez\LaravelHelpers\Composer;
 
 class LaravelHelpersServiceProvider extends ServiceProvider
 {

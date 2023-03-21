@@ -1,6 +1,6 @@
 <?php
 
-namespace Livewirez\LaravelHelpers;
+namespace Livewirez\LaravelHelpers\Composer;
 
 use stdClass;
 use ArrayAccess;

@@ -16,7 +16,12 @@ class Composer implements ArrayAccess
     public function composer_has_files(): bool
     {
         if (property_exists($this, 'autoload')) {
-            return ! is_null($this->autoload->files) || $this->autoload->files !== [];
+
+            if (! property_exists($this->autoload, 'files')) {
+                return false;
+            }
+
+            return ! is_null($this->autoload->files) || ($this->autoload->files !== [] || null);
         }
 
         return false;

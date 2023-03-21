@@ -2,10 +2,10 @@
 
 namespace Livewirez\LaravelHelpers\Composer;
 
-use stdClass;
 use ArrayAccess;
 
-class Composer extends stdClass implements ArrayAccess
+#[\AllowDynamicProperties]
+class Composer implements ArrayAccess
 {
     public function __construct(?object $composerautoload = null) {
         foreach (get_object_vars($composerautoload) as $name => $value) {
@@ -16,7 +16,7 @@ class Composer extends stdClass implements ArrayAccess
     public function composer_has_files(): bool
     {
         if (property_exists($this, 'autoload')) {
-            return ! is_null($this->autoload?->files) || $this->autoload->files !== [];
+            return ! is_null($this->autoload->files) || $this->autoload->files !== [];
         }
 
         return false;

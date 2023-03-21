@@ -2,10 +2,11 @@
 
 namespace Livewirez\LaravelHelpers\Composer;
 
+use stdClass;
 use ArrayAccess;
 
-#[\AllowDynamicProperties]
-class Composer implements ArrayAccess
+// #[\AllowDynamicProperties] for php 8.2.0 when not using stdClass
+class Composer extends stdClass implements ArrayAccess
 {
     public function __construct(?object $composerautoload = null) {
         foreach (get_object_vars($composerautoload) as $name => $value) {

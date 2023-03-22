@@ -1,0 +1,34 @@
+{
+    "name": "livewirez/laravel-helpers",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Steve",
+            "email": "stevemwendest@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2.0"   
+    },
+    "autoload": {
+        "psr-4": {
+            "Livewirez\\LaravelHelpers\\": "src/"
+        },
+        "files" : [
+            "src/Helpers/Helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Livewirez\\LaravelHelpers\\LaravelHelpersServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -13,15 +13,15 @@ class LaravelHelpersServiceProvider extends ServiceProvider
     {
         if (app()->runningInConsole()) {
 
-            $helper_file = app_path().'/Helpers/Helpers.php';
+            // $helper_file = app_path().'/Helpers/Helpers.php';
 
-            if (! file_exists($helper_file)) {
-                $this->publishes([
-                    __DIR__.'/Helpers/Helpers.php' => app_path('Helpers/Helpers.php'),
-                ], 'laravel-helpers');
-            }
+            // if (! file_exists($helper_file)) {
+            //     $this->publishes([
+            //         __DIR__.'/Helpers/Helpers.php' => app_path('Helpers/Helpers.php'),
+            //     ], 'laravel-helpers');
+            // }
 
-            $this->setAutoloadFile();
+            // $this->setAutoloadFile();
         }
     }
 
@@ -37,7 +37,7 @@ class LaravelHelpersServiceProvider extends ServiceProvider
         $composer_file_string = $disk->get('composer.json');
 
         $composer = new Composer(json_decode($composer_file_string));
-        
+
         $path = "app/Helpers/Helpers.php";
 
         if ($composer->composer_has_files()) {

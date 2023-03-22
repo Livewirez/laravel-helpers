@@ -4,7 +4,10 @@
     "autoload": {
         "psr-4": {
             "Livewirez\\LaravelHelpers\\": "src/"
-        }
+        },
+        "files" : [
+            "src/Composer/Composer.php"
+        ]
     },
     "authors": [
         {

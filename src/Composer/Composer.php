@@ -11,6 +11,7 @@ class Composer extends stdClass implements ArrayAccess
     public function __construct(?object $composerautoload = null) {
         foreach (get_object_vars($composerautoload) as $name => $value) {
             $this->$name = $value;
+            unset($this->composerautoload);
         }
     }
 

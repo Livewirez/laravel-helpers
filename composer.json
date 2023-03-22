@@ -1,22 +1,23 @@
 {
     "name": "livewirez/laravel-helpers",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Livewirez\\LaravelHelpers\\": "src/"
-        },
-        "files" : [
-            "src/Composer/Composer.php"
-        ]
-    },
+    "type": "library",
     "authors": [
         {
             "name": "Steve",
             "email": "stevemwendest@gmail.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php": "^8.2.0"   
+    },
+    "autoload": {
+        "psr-4": {
+            "Livewirez\\LaravelHelpers\\": "src/"
+        },
+        "files" : [
+            "Helpers/Helpers.php"
+        ]
     },
     "extra": {
         "laravel": {

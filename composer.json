@@ -6,7 +6,7 @@
             "Livewirez\\LaravelHelpers\\": "src/"
         },
         "files" : [
-            "src/Composer/Composer.php"
+            "Helpers/Helpers.php"
         ]
     },
     "authors": [

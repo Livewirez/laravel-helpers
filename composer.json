@@ -16,7 +16,7 @@
             "Livewirez\\LaravelHelpers\\": "src/"
         },
         "files" : [
-            "Helpers/Helpers.php"
+            "src/Helpers/Helpers.php"
         ]
     },
     "extra": {
